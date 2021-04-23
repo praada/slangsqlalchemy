@@ -1,0 +1,21 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE"] = "sqlite:///C:\Users\xmkel\Desktop\Nueva carpeta\slangalq2.db"
+app.config["SQLACHEMY_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
+
+class SLANG(db.Model):
+    ID = db.Column(db.Integer), primary_key=True
+    PAL = db.Column(db.String)
+    SIG = db.Column(db.String)
+
+
+    def __repr__(self)
+        return "<SLANG %r>" % self.PAL
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
